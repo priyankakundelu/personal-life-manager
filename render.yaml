@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: personal-life-manager-api
+    env: node
+    buildCommand: npm install && npm run build && npm run init-db
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: DB_PATH
+        value: ./database/life_manager.db
+
